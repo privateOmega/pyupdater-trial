@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "pyupdater-trial"
+version = "0.1.0"
+description = ""
+authors = ["PrivateOmega <privateomega@protonmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+PyUpdater = "^4.0"
+
+[tool.poetry.dev-dependencies]
+poethepoet = "^0.10.0"
+macholib = "^1.14"
+pyinstaller = "^3.6"
+
+[tool.poe.tasks]
+build = "pyupdater build --hidden-import=pkg_resources.py2_warn --app-version 0.0.1 main.py"
+build_trial="pyupdater build --app-version=1.0.0 main.spec"
+build_pyin = "pyinstaller --hidden-import=pkg_resources.py2_warn main.py"
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
