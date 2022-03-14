@@ -15,9 +15,6 @@ pyinstaller = "^3.6"
 
 [tool.poe.tasks]
 build = "pyupdater build --hidden-import=pkg_resources.py2_warn --app-version 0.0.1 main.py"
-build_trial="pyupdater build --app-version=1.0.0 main.spec"
-build_pyin = "pyinstaller --hidden-import=pkg_resources.py2_warn main.py"
-
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
