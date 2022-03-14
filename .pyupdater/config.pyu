@@ -1,0 +1,20 @@
+{
+  "config_dir": "/Users/mathew/Projects/tryouts/pyupdater-trial/.pyupdater",
+  "filename": "/Users/mathew/Projects/tryouts/pyupdater-trial/.pyupdater/config.pyu",
+  "count": 0,
+  "app_config": {
+    "APP_NAME": "PyUpdater Trial",
+    "CLIENT_CONFIG_PATH": [
+      "client_config.py"
+    ],
+    "COMPANY_NAME": "PrivateOmega",
+    "PLUGIN_CONFIGS": {},
+    "UPDATE_PATCHES": true,
+    "MAX_DOWNLOAD_RETRIES": 3,
+    "HTTP_TIMEOUT": 30,
+    "UPDATE_URLS": [
+      ""
+    ],
+    "DATA_DIR": "/Users/mathew/Projects/tryouts/pyupdater-trial"
+  }
+}
