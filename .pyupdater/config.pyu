@@ -8,7 +8,16 @@
       "client_config.py"
     ],
     "COMPANY_NAME": "PrivateOmega",
-    "PLUGIN_CONFIGS": {},
+    "PLUGIN_CONFIGS": {
+      "scp-Digital Sapphire": {
+        "username": "",
+        "password": "",
+        "keyfile": "",
+        "host": "",
+        "port": 22,
+        "remote_dir": "/home/mathew/pyupdater-storage"
+      }
+    },
     "UPDATE_PATCHES": true,
     "MAX_DOWNLOAD_RETRIES": 3,
     "HTTP_TIMEOUT": 30,
