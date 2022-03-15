@@ -10,6 +10,7 @@ PyUpdater = "^4.0"
 PyUpdater-SCP-Plugin = "^4.0.3"
 PyUpdater-S3-Plugin = "^4.1.2"
 dsdev-utils = "1.0.4"
+toml = "^0.10.2"
 
 [tool.poetry.dev-dependencies]
 poethepoet = "^0.10.0"
