@@ -1,14 +1,23 @@
+import logging
 import os
 import sys
 from pyupdater.client import Client
-from toml import load
 import argparse
 
 from client_config import ClientConfig
 
-poetry_config = load("pyproject.toml")
+APP_VERSION = "0.0.1"
 
-APP_VERSION = poetry_config["tool"]["poetry"]["version"]
+logger = logging.getLogger("pyupdater")
+logger.setLevel(logging.DEBUG)
+# create console handler with a higher log level
+handler = logging.StreamHandler()
+handler.setLevel(logging.DEBUG)
+# create formatter and add it to the handler
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+# add the handler to the logger
+logger.addHandler(handler)
 
 
 def parse_args(argv):
