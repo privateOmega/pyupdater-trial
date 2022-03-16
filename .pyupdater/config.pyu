@@ -22,7 +22,7 @@
     "MAX_DOWNLOAD_RETRIES": 3,
     "HTTP_TIMEOUT": 30,
     "UPDATE_URLS": [
-      ""
+      "http://192.168.1.182:3000/"
     ],
     "DATA_DIR": "/Users/mathew/Projects/tryouts/pyupdater-trial"
   }
