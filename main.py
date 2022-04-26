@@ -3,6 +3,7 @@ import os
 import sys
 from pyupdater.client import Client
 import argparse
+import shutil
 
 from client_config import ClientConfig
 
@@ -62,7 +63,24 @@ def check_for_updates():
             downloaded = app_update.download()
             if downloaded:
                 print("Extracting update and restarting")
-                app_update.extract_restart()
+                app_update.extract()
+                app_update_dir = os.path.join(app_update.update_folder, app_update.name)
+                current_app_dir = app_update._current_app_dir
+                current_app = os.path.join(current_app_dir, app_update.name)
+
+                for root, dirs, files in os.walk(current_app_dir):
+                    for f in files:
+                        os.unlink(os.path.join(root, f))
+                    for d in dirs:
+                        shutil.rmtree(os.path.join(root, d))
+
+                for root, dirs, files in os.walk(app_update_dir):
+                    for f in files:
+                        shutil.move(os.path.join(root, f), os.path.join(current_app_dir, f))
+                    for d in dirs:
+                        shutil.move(os.path.join(root, d), os.path.join(current_app_dir, d))
+
+                os.execl(current_app, app_update.name, *sys.argv[1:])
             else:
                 print("Download failed")
         else:
