@@ -18,6 +18,9 @@ macholib = "^1.14"
 
 [tool.poe.tasks]
 build = "pyupdater build --hidden-import=pkg_resources.py2_warn --app-version 0.0.1 main.py"
+package = "pyupdater pkg --process --sign"
+_publish = "pyupdater upload --service scp"
+release = ["build", "package", "_publish"]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
